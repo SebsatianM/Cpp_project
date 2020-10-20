@@ -19,7 +19,6 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 -SQLAPI++,
 -C++17
 
-
 ## TODO
 
 - [x] 20.10.2020 
@@ -29,8 +28,8 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [ ] Stworzenie wstępnego interfesju,
     - [ ] Stworzenie inicjalizacji programu,
     - [ ] Stworzenie fragmentu do dodawania pól,
-- [] 17.11.2020 - Raport II
-    - [] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+- [ ] 17.11.2020 - Raport II
+    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 01.12.2020 - Raport III
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 15.12.2020 - Raport IV
