@@ -1,11 +1,11 @@
 # Cpp_project
 Projekt w C++
 
-##Opis
+## Opis
 =============
 Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie kosztami prac prowadzonych na polu.
 
-##Założenia
+## Założenia
 -Analizowanie dotychczasowych wydatków,
 -Podział na poszczególne pola,
 -Histora działań z przeszłości,
@@ -14,21 +14,21 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 -Łatwość w obsłudze,
 -Czytelność interfejsu
 
-##Technologie
-+Qt,
-+SQLAPI++,
-+C++17
+## Technologie
+*Qt,
+*SQLAPI++,
+*C++17
 
 
-##TODO
+## TODO
 
 - [x] 20.10.2020 
     - [x] Stworzenie propozycji projektu oraz READme
-- [x] 03.11.2020 - Raport I
-    - [] Stworzenie bazy danych,
-    - [] Stworzenie wstępnego interfesju,
-    - [] Stworzenie inicjalizacji programu,
-    - [] Stworzenie fragmentu do dodawania pól,
+- [ ] 03.11.2020 - Raport I
+    - [ ] Stworzenie bazy danych,
+    - [ ] Stworzenie wstępnego interfesju,
+    - [ ] Stworzenie inicjalizacji programu,
+    - [ ] Stworzenie fragmentu do dodawania pól,
 - [ ] 17.11.2020 - Raport II
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 01.12.2020 - Raport III
