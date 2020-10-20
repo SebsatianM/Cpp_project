@@ -2,7 +2,7 @@
 Projekt w C++
 
 ## Opis
-=============
+-------
 Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie kosztami prac prowadzonych na polu.
 
 ## Założenia
@@ -15,9 +15,9 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 -Czytelność interfejsu
 
 ## Technologie
-*Qt,
-*SQLAPI++,
-*C++17
+-Qt,
+-SQLAPI++,
+-C++17
 
 
 ## TODO
@@ -29,8 +29,8 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [ ] Stworzenie wstępnego interfesju,
     - [ ] Stworzenie inicjalizacji programu,
     - [ ] Stworzenie fragmentu do dodawania pól,
-- [ ] 17.11.2020 - Raport II
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+- [] 17.11.2020 - Raport II
+    - [] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 01.12.2020 - Raport III
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 15.12.2020 - Raport IV
