@@ -2,7 +2,6 @@
 Projekt w C++
 
 ## Opis
--------
 Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie kosztami prac prowadzonych na polu.
 
 ## Założenia
