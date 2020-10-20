@@ -5,18 +5,18 @@ Projekt w C++
 Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie kosztami prac prowadzonych na polu.
 
 ## Założenia
--Analizowanie dotychczasowych wydatków
--Podział na poszczególne pola
--Histora działań z przeszłości
--Ustawianie planowanych działań
--Dodawanie cen i ilości zebranych warzyw
--Łatwość w obsłudze
--Czytelność interfejsu
+- Analizowanie dotychczasowych wydatków
+- Podział na poszczególne pola
+- Histora działań z przeszłości
+- Ustawianie planowanych działań
+- Dodawanie cen i ilości zebranych warzyw
+- Łatwość w obsłudze
+- Czytelność interfejsu
 
 ## Technologie
-*Qt
-*SQLAPI++
-*C++17
+* Qt
+* SQLAPI++
+* C++17
 
 ## TODO
 
