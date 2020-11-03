@@ -23,7 +23,7 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 
 - [x] 20.10.2020 
     - [x] Stworzenie propozycji projektu oraz READme
-- [ ] 03.11.2020 - Raport I
+- [x] 03.11.2020 - Raport I
     - [x] Stworzenie bazy danych,
     - [x] Skonfigurowanie IDE,
     - [x] Skonfigurowanie usługi windows server aby podłączyć się z bazą danych,
