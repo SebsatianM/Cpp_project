@@ -17,18 +17,21 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 * Qt
 * SQLAPI++
 * C++17
+* Windows Server
 
 ## TODO
 
 - [x] 20.10.2020 
     - [x] Stworzenie propozycji projektu oraz READme
 - [ ] 03.11.2020 - Raport I
-    - [ ] Stworzenie bazy danych,
-    - [ ] Stworzenie wstępnego interfesju,
-    - [ ] Stworzenie inicjalizacji programu,
-    - [ ] Stworzenie fragmentu do dodawania pól,
+    - [x] Stworzenie bazy danych,
+    - [x] Skonfigurowanie IDE,
+    - [x] Skonfigurowanie usługi windows server aby podłączyć się z bazą danych,
+    - [x] Stworzenie inicjalizacji programu,
+    - [x] Wyświetlenie zawartości bazy danych, 
 - [ ] 17.11.2020 - Raport II
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+    - [ ] Stworzenie wstępnego interfesju,
+    - [ ] Stworzenie fragmentu do dodawania pól,
 - [ ] 01.12.2020 - Raport III
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 15.12.2020 - Raport IV
