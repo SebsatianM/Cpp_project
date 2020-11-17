@@ -15,9 +15,8 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
 
 ## Technologie
 * Qt
-* SQLAPI++
+* Sqlite
 * C++17
-* Windows Server
 
 ## TODO
 
@@ -29,11 +28,18 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [x] Skonfigurowanie usługi windows server aby podłączyć się z bazą danych,
     - [x] Stworzenie inicjalizacji programu,
     - [x] Wyświetlenie zawartości bazy danych, 
-- [ ] 17.11.2020 - Raport II
-    - [ ] Stworzenie wstępnego interfesju,
-    - [ ] Stworzenie fragmentu do dodawania pól,
+- [x] 17.11.2020 - Raport II
+    - [x] Stworzenie nowej bazy danych,
+    - [x] Stworzenie projektu 'od nowa',
+    - [x] Stworzenie wstępnego interfesju,
+    - [x] Stworzenie fragmentu do dodawania pól,
+    - [x] Stworzenie zakładek do dalszego uzupełńienia,
 - [ ] 01.12.2020 - Raport III
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+    - [ ] Stworzenie wszystkich funkcjonalności związaną z bazą danych,
+        - [ ] dodawanie danych,
+        - [ ] usuwanie usuwanie,
+        - [ ] edytowanie danych,
+    - [ ] Wstępna edycja wizualna GUI,
 - [ ] 15.12.2020 - Raport IV
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
 - [ ] 12.01.2021 - Prototyp 
