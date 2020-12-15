@@ -35,15 +35,16 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [x] Stworzenie fragmentu do dodawania pól,
     - [x] Stworzenie zakładek do dalszego uzupełńienia,
 - [ ] 01.12.2020 - Raport III
-    - [ ] Stworzenie wszystkich funkcjonalności związaną z bazą danych,
-        - [ ] dodawanie danych,
-        - [ ] usuwanie usuwanie,
-        - [ ] edytowanie danych,
-    - [ ] Wstępna edycja wizualna GUI,
-- [ ] 15.12.2020 - Raport IV
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+- [x] 15.12.2020 - Raport IV
+      - [x] Stworzenie funkcjonalności związaną z bazą danych,
+        - [x] dodawanie danych,
+        - [x] usuwanie danych,
+        - [x] edytowanie danych,
+        - [x] automatyczne 'odświeżenie' danych w aplikacji po ich zmianie bądź usunięciu,
+      - [x] Wstępna edycja wizualna GUI,
 - [ ] 12.01.2021 - Prototyp 
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
-- [ ] 02.02.2021 - Prezentacja
+    - [ ] skończenie wszyskitch funkcjonalności programu,
+    - [ ] sprawdzanie walidacji danych,
+ - [ ] 02.02.2021 - Prezentacja
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
     - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
