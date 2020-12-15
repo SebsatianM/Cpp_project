@@ -35,6 +35,7 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [x] Stworzenie fragmentu do dodawania pól,
     - [x] Stworzenie zakładek do dalszego uzupełńienia,
 - [ ] 01.12.2020 - Raport III
+    - [x] Problemy z aktualizacją systemu przez co rozsypało mi się środowisko więc w projekcie nie zaszły zbyt wielkie zmiany 
 - [x] 15.12.2020 - Raport IV
     - [x] Stworzenie funkcjonalności związaną z bazą danych,
         - [x] dodawanie danych,
