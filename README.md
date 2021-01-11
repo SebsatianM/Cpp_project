@@ -43,9 +43,11 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
         - [x] edytowanie danych,
         - [x] automatyczne 'odświeżenie' danych w aplikacji po ich zmianie bądź usunięciu,
      - [x] Wstępna edycja wizualna GUI,
-- [ ] 12.01.2021 - Prototyp 
-    - [ ] skończenie wszyskitch funkcjonalności programu,
-    - [ ] sprawdzanie walidacji danych,
+- [x] 12.01.2021 - Prototyp 
+    - [x] skończenie wszyskitch funkcjonalności programu,
+    - [x] sprawdzanie walidacji danych,
+    - [x] stworzenie prezentacji prototypu,
  - [ ] 02.02.2021 - Prezentacja
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
-    - [ ] lista kolejnych zadań będzie zaktualizowana po ukończeniu poprzedniego raportu
+    - [ ] utworzenie graficznej części okna do wyświetlania informacji,
+    - [ ] sprawdzenie czy nie występują jakieś błędy,
+    - [ ] edycja wizualna,
