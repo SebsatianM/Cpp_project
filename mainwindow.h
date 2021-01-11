@@ -16,6 +16,7 @@ class MainWindow : public QMainWindow
 
 public:
     QSqlDatabase mydb;
+
     void connClose()
     {
         mydb.close();
@@ -33,10 +34,11 @@ public:
         }
         else
         {
-             qDebug()<<("Prawidłowo połączono z bazą danych");
+             //qDebug()<<("Prawidłowo połączono z bazą danych");
              return true;
         }
     }
+
     void loadTractorListToComboBox()
     {
         connOpen();
@@ -51,7 +53,7 @@ public:
 
         connClose();
 
-        qDebug()<<(modal->rowCount());
+        //qDebug()<<(modal->rowCount());
 
 
     }
@@ -70,7 +72,7 @@ public:
 
         connClose();
 
-        qDebug()<<(modal->rowCount());
+
     }
     void loadTractorsToEditList()
     {
@@ -84,8 +86,47 @@ public:
         modal->setQuery(*query);
         ui->t_name_list->setModel(modal);
         connClose();
+    }
 
-        qDebug()<<(modal->rowCount());
+    void loadWorkTypesToEditLists()
+    {
+        connOpen();
+
+        QSqlQueryModel *modal=new QSqlQueryModel();
+        QSqlQuery* query = new QSqlQuery(mydb);
+        query->prepare("SELECT DISTINCT name from work_types");
+        query->exec();
+        modal->setQuery(*query);
+        ui->wt_name_list->setModel(modal);
+        connClose();
+    }
+    void loadFieldsToTaskTab()
+    {
+        connOpen();
+
+        QSqlQueryModel *modal=new QSqlQueryModel();
+        QSqlQuery* query = new QSqlQuery(mydb);
+
+        query->prepare("SELECT name from fields");
+        query->exec();
+
+        modal->setQuery(*query);
+        ui->f_name_Task_list->setModel(modal);
+
+        connClose();
+
+    }
+    void loadWorkTypesToTaskTab()
+    {
+        connOpen();
+
+        QSqlQueryModel *modal=new QSqlQueryModel();
+        QSqlQuery* query = new QSqlQuery(mydb);
+        query->prepare("SELECT DISTINCT name from work_types");
+        query->exec();
+        modal->setQuery(*query);
+        ui->wt_name_Task_list->setModel(modal);
+        connClose();
     }
 
 public:
@@ -102,17 +143,25 @@ private slots:
 
     void on_add_wt_button_clicked();
 
-    void on_f_name_list_currentIndexChanged(const QString &arg1);
+    void on_f_name_list_currentIndexChanged(const QString &name);
 
     void on_f_edit_delete_button_clicked();
 
     void on_f_edit_save_button_clicked();
 
-    void on_t_name_list_currentIndexChanged(const QString &arg1);
+    void on_t_name_list_currentIndexChanged(const QString &name);
 
     void on_t_edit_delete_button_clicked();
 
     void on_t_edit_save_button_clicked();
+
+    void on_wt_name_list_currentIndexChanged(const QString &name);
+
+    void on_wt_edit_t_list_currentIndexChanged(const QString &name);
+
+    void on_add_task_button_clicked();
+
+    void on_wt_name_Task_list_currentIndexChanged(const QString &arg1);
 
 private:
     Ui::MainWindow *ui;
