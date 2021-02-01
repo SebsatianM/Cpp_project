@@ -47,7 +47,7 @@ Celem mojego projektu jest stworzenie aplikacji to przechowywania i analizowanie
     - [x] skończenie wszyskitch funkcjonalności programu,
     - [x] sprawdzanie walidacji danych,
     - [x] stworzenie prezentacji prototypu,
- - [ ] 02.02.2021 - Prezentacja
-    - [ ] utworzenie graficznej części okna do wyświetlania informacji,
-    - [ ] sprawdzenie czy nie występują jakieś błędy,
-    - [ ] edycja wizualna,
+ - [x] 02.02.2021 - Prezentacja
+    - [x] utworzenie graficznej części okna do wyświetlania informacji,
+    - [x] sprawdzenie czy nie występują jakieś błędy,
+    - [x] edycja wizualna,
