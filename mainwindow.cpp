@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
+    loadMainTab();
 
 }
 
@@ -81,7 +82,11 @@ void MainWindow::on_add_tractor_button_clicked()
 
 void MainWindow::on_tabWidget_tabBarClicked(int index)
 {
-   if (index==1)
+
+   if(index==0)
+   {
+       loadMainTab();
+   }else if (index==1)
    {
        loadFieldsToTaskTab();
        loadWorkTypesToTaskTab();
@@ -100,7 +105,7 @@ void MainWindow::on_add_wt_button_clicked()
     QString t_name = ui->wt_t_name_comboBox->currentText();
     QString name = ui->wt_name_lineEdit->text();
     QString f_cons = ui->wt_fuel_con_lineEdit->text();
-    qDebug()<<name<<f_cons<<t_name;
+
 
     if(name.isEmpty())
         {
@@ -341,14 +346,10 @@ void MainWindow::on_add_task_button_clicked()
     f_name = ui->f_name_Task_list->currentText();
     wt_name = ui->wt_name_Task_list->currentText();
     t_name = ui->t_name_Task_list->currentText();
-    desc = ui->desc_text->toPlainText();
+    desc= "Brak opisu";
+    if(ui->desc_text->toPlainText()!="")
+        desc = ui->desc_text->toPlainText();
 
-    qDebug()<<isDone;
-    qDebug()<<DateSelected.toString("dd-MM-yy");
-    qDebug()<<f_name;
-    qDebug()<<wt_name;
-    qDebug()<<t_name;
-    qDebug()<<desc;
     float fuel_use,field_area,used_fuel;
     connOpen();
     QSqlQuery Fuel_query,Area_query,insert_query;
@@ -385,20 +386,20 @@ void MainWindow::on_add_task_button_clicked()
                              "f_name,"
                              "type,"
                              "state,"
-                             "date,"
+                             "data,"
                              "description,"
                              "fuel_use)"
                              "VALUES (?,?,?,?,?,?);");
         insert_query.addBindValue(f_name);
         insert_query.addBindValue(wt_name);
         insert_query.addBindValue(isDone);
-        insert_query.addBindValue(DateSelected.toString("dd-MM-yyyy"));
+        insert_query.addBindValue(DateSelected.toString("yyyy-MM-dd"));
         insert_query.addBindValue(desc);
         insert_query.addBindValue(used_fuel);
 
         if(insert_query.exec())
         {
-            QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo dodano nowy prace do historii"));
+            QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo dodano nową prace do historii"));
         }
         else
         {
@@ -424,3 +425,221 @@ void MainWindow::on_wt_name_Task_list_currentIndexChanged(const QString &name)
     ui->t_name_Task_list->setModel(modal);
     connClose();
 }
+
+void MainWindow::on_upcomingTaskList_activated(const QModelIndex &index)
+{
+    connClose();
+    QString type;
+    type=ui->upcomingTaskList->model()->data(index).toString();
+    connOpen();
+
+
+    QSqlQuery query;
+
+    query.prepare("SELECT f_name, state,data,description,fuel_use,id FROM tasks where type='"+type+"'AND state='0'");
+    if(query.exec())
+    {
+        while(query.next())
+        {
+            qDebug()<<query.value(0).toString();
+            qDebug()<<query.value(1).toString();
+            qDebug()<<query.value(2).toString();
+            qDebug()<<query.value(3).toString();
+
+             ui->f_name_info->setText(query.value(0).toString());
+             ui->type_name_info->setText(type);
+             if(query.value(1)==0)
+             {
+                 ui->stateComboBox->setCurrentText("Nie");
+             }else
+                 ui->stateComboBox->setCurrentText("Tak");
+             ui->dateEdit->setDate(query.value(2).toDate());
+             ui->desc_info->setText(query.value(3).toString());
+             ui->fuel_use_info->setText(query.value(4).toString());
+             ui->Id_val->setText(query.value(5).toString());
+        }
+    }
+    else
+    {
+        QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+    }
+    connClose();
+
+}
+
+void MainWindow::on_oldTaskList_activated(const QModelIndex &index)
+{
+    connClose();
+    QString type;
+    type=ui->oldTaskList->model()->data(index).toString();
+    qDebug()<<type;
+    connOpen();
+
+    QSqlQuery query;
+
+    query.prepare("SELECT f_name, state,data,description,fuel_use,id FROM tasks where type='"+type+"'AND state='1'");
+    if(query.exec())
+    {
+        while(query.next())
+        {
+             ui->f_name_info->setText(query.value(0).toString());
+             ui->type_name_info->setText(type);
+             if(query.value(1)==0)
+             {
+                 ui->stateComboBox->setCurrentText("Nie");
+             }else
+                 ui->stateComboBox->setCurrentText("Tak");
+             ui->dateEdit->setDate(query.value(2).toDate());
+             ui->desc_info->setText(query.value(3).toString());
+             ui->fuel_use_info->setText(query.value(4).toString());
+             ui->Id_val->setText(query.value(5).toString());
+        }
+    }
+    else
+    {
+        QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+    }
+    connClose();
+
+}
+
+void MainWindow::on_wt_edit_delete_button_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Potrzebne potwierdzenie!", "Jesteś pewny, że chcesz to usunąć?",QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes)
+      {
+        QString w_type= ui->wt_name_list->currentText();
+        QString t_name = ui->wt_edit_t_list->currentText();
+        connOpen();
+        QSqlQuery query;
+            query.prepare("DELETE FROM work_types WHERE name='"+w_type+"' AND tractor='"+t_name+"'");
+            if(query.exec())
+            {
+                QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo usunięto rodzaj pracy"));
+                loadWorkTypesToEditLists();
+            }
+            else
+            {
+                QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+            }
+        connClose();
+       }else
+      {
+          QMessageBox::information(this, tr("Anulowano"), tr("Na szczęście nic nie usunięto. Bądź ostrożny!"));
+      }
+
+}
+
+void MainWindow::on_wt_edit_save_button_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Potrzebne potwierdzenie!", "Jesteś pewny, że chcesz to zmienić?",QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes)
+      {
+        QString w_type= ui->wt_name_list->currentText();
+        QString t_name = ui->wt_edit_t_list->currentText();
+        QString f_cons = ui->wt_edit_fcon_lineEdit->text();
+        connOpen();
+        QSqlQuery query;
+            query.prepare("UPDATE work_types SET fuel_cons='"+f_cons+"' WHERE name='"+w_type+"' AND tractor='"+t_name+"'");
+            if(query.exec())
+            {
+                QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo zmieniono"));
+                loadWorkTypesToEditLists();
+            }
+            else
+            {
+                QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+            }
+        connClose();
+    }else
+      {
+          QMessageBox::information(this, tr("Anulowano"), tr("Na szczęście nic nie zmienono. Sprawdź jeszcze raz!"));
+      }
+}
+
+void MainWindow::on_task_delete_button_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Potrzebne potwierdzenie!", "Jesteś pewny, że chcesz to usunąć?",QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes)
+      {
+        QString id = ui->Id_val->text();
+        connOpen();
+        QSqlQuery query;
+            query.prepare("DELETE FROM tasks WHERE id='"+id+"'");
+            if(query.exec())
+            {
+                QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo usunięto zadanie"));
+                connClose();
+                loadMainTab();
+                connOpen();
+            }
+            else
+            {
+                QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+            }
+        connClose();
+       }else
+      {
+          QMessageBox::information(this, tr("Anulowano"), tr("Na szczęście nic nie usunięto. Bądź ostrożny!"));
+      }
+
+}
+
+void MainWindow::on_task_edit_button_clicked()
+{
+    QMessageBox::StandardButton reply;
+    reply = QMessageBox::question(this, "Potrzebne potwierdzenie!", "Jesteś pewny, że chcesz to zmienić?",QMessageBox::Yes|QMessageBox::No);
+      if (reply == QMessageBox::Yes)
+      {
+          QString f_name = ui->f_name_info->text();
+          QString type = ui->type_name_info->text();
+          QString state =ui->stateComboBox->currentText();
+          QString id = ui->Id_val->text();
+          QString desc= ui->desc_info->toPlainText();
+          QDate data = ui->dateEdit->date();
+          QString fuel_use = ui->fuel_use_info->text();
+          qDebug()<<state;
+          if(state=="Tak")
+          {
+              state="1";
+          }
+          else
+          {
+              state="0";
+          }
+          qDebug()<<f_name;
+          qDebug()<<state;
+          qDebug()<<type;
+          qDebug()<<desc;
+          qDebug()<<fuel_use;
+          qDebug()<<id;
+          qDebug()<<data.toString("yyyy-MM-dd");
+
+
+          connOpen();
+          QSqlQuery query;
+              query.prepare("UPDATE tasks SET f_name='"+f_name+"', state='"+state+"',type='"+type+"', data='"+data.toString("yyyy-MM-dd")+"', description='"+desc+"', fuel_use='"+fuel_use+"' WHERE id='"+id+"'");
+              if(query.exec())
+              {
+                  QMessageBox::information(this, tr("Sukces"), tr("Prawidłowo zmieniono"));
+                  connClose();
+                  loadMainTab();
+                  connOpen();
+              }
+              else
+              {
+                  QMessageBox::critical(this, tr("Błąd"), query.lastError().text());
+              }
+          connClose();
+
+    }else
+      {
+          QMessageBox::information(this, tr("Anulowano"), tr("Na szczęście nic nie zmienono. Sprawdź jeszcze raz!"));
+      }
+
+}
+
+

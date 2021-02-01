@@ -17,7 +17,7 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>Zarządzanie rolnictwem</string>
+   <string>Zarządzanie gospodarstwem</string>
   </property>
   <property name="accessibleName">
    <string/>
@@ -78,7 +78,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
@@ -96,6 +96,452 @@
        <attribute name="title">
         <string>Ogólne</string>
        </attribute>
+       <widget class="QGroupBox" name="groupBox_4">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>161</width>
+          <height>481</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Wydarzenia</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>141</width>
+           <height>217</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Nadchodzące</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListView" name="upcomingTaskList"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>260</y>
+           <width>141</width>
+           <height>217</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>Wykonane</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListView" name="oldTaskList"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_5">
+        <property name="geometry">
+         <rect>
+          <x>679</x>
+          <y>10</y>
+          <width>141</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Informacje ogólne</string>
+        </property>
+        <widget class="Line" name="line">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>100</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_2">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>170</y>
+           <width>141</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="Line" name="line_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>240</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget_2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>260</y>
+           <width>121</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_16">
+          <item>
+           <widget class="QLabel" name="label_15">
+            <property name="text">
+             <string>Liczba nie wykonanych prac</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="NotDoneTasksCountBox"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="Line" name="line_4">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>340</y>
+           <width>141</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>121</width>
+           <height>71</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_11">
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>Powierzchnia Gospodarstwa</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="areaBox">
+            <property name="overwriteMode">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>121</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>Zużyte paliwo</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="used_fuelBox"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>180</y>
+           <width>121</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_13">
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>Ilość pól</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="f_numberBox"/>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="layoutWidget">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>360</y>
+           <width>121</width>
+           <height>81</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_14">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Liczba wykonanych prac</string>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTextBrowser" name="DoneTasksCountBox"/>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>40</y>
+          <width>144</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Nazwa pola</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="f_name_info"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>40</y>
+          <width>144</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Rodzaj pracy</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="type_name_info"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>40</y>
+          <width>144</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Zużycie paliwa</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="fuel_use_info"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>460</y>
+          <width>201</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="task_edit_button">
+           <property name="text">
+            <string>Modyfikuj</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="task_delete_button">
+           <property name="text">
+            <string>Usuń</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>120</y>
+          <width>141</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>Opis</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="desc_info"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>160</y>
+          <width>61</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_15">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="text">
+            <string>ID</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="Id_val">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>160</y>
+          <width>104</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="dateEdit"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="layoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>160</y>
+          <width>88</width>
+          <height>50</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>Ukończone</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="stateComboBox">
+           <item>
+            <property name="text">
+             <string>Tak</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Nie</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="title">
@@ -104,10 +550,10 @@
        <widget class="QPushButton" name="add_task_button">
         <property name="geometry">
          <rect>
-          <x>560</x>
-          <y>390</y>
+          <x>460</x>
+          <y>370</y>
           <width>89</width>
-          <height>25</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
@@ -324,7 +770,7 @@
              <item>
               <widget class="QPushButton" name="t_edit_save_button">
                <property name="text">
-                <string>Zapisz</string>
+                <string>Modyfikuj</string>
                </property>
               </widget>
              </item>
@@ -362,7 +808,7 @@
                <item>
                 <widget class="QLabel" name="t_edit_power_label">
                  <property name="text">
-                  <string>Moc</string>
+                  <string>Moc (km)</string>
                  </property>
                 </widget>
                </item>
@@ -415,7 +861,7 @@
              <item>
               <widget class="QPushButton" name="wt_edit_save_button">
                <property name="text">
-                <string>Zapisz</string>
+                <string>Modyfikuj</string>
                </property>
               </widget>
              </item>
@@ -529,7 +975,7 @@
              <item>
               <widget class="QPushButton" name="f_edit_save_button">
                <property name="text">
-                <string>Zapisz</string>
+                <string>Modyfikuj</string>
                </property>
               </widget>
              </item>
@@ -567,7 +1013,7 @@
                <item>
                 <widget class="QLabel" name="f_edit_area_label">
                  <property name="text">
-                  <string>Powierzchnia</string>
+                  <string>Powierzchnia (ha)</string>
                  </property>
                 </widget>
                </item>
@@ -653,7 +1099,7 @@
           <widget class="QPushButton" name="add_field_button">
            <property name="geometry">
             <rect>
-             <x>470</x>
+             <x>560</x>
              <y>40</y>
              <width>81</width>
              <height>31</height>
@@ -744,9 +1190,9 @@
           <widget class="QPushButton" name="add_tractor_button">
            <property name="geometry">
             <rect>
-             <x>470</x>
-             <y>44</y>
-             <width>89</width>
+             <x>560</x>
+             <y>50</y>
+             <width>81</width>
              <height>31</height>
             </rect>
            </property>
@@ -783,7 +1229,7 @@
               <item>
                <widget class="QLabel" name="t_power_label">
                 <property name="text">
-                 <string>Moc</string>
+                 <string>Moc (km)</string>
                 </property>
                </widget>
               </item>
@@ -806,7 +1252,7 @@
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>10</width>
+            <width>20</width>
             <height>30</height>
            </size>
           </property>
@@ -814,6 +1260,18 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox_3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>100</height>
+           </size>
+          </property>
           <property name="title">
            <string>Dodaj rodzaj wykonywanej pracy</string>
           </property>
@@ -842,9 +1300,9 @@
           <widget class="QPushButton" name="add_wt_button">
            <property name="geometry">
             <rect>
-             <x>600</x>
-             <y>44</y>
-             <width>89</width>
+             <x>560</x>
+             <y>40</y>
+             <width>81</width>
              <height>31</height>
             </rect>
            </property>
@@ -897,6 +1355,22 @@
            </layout>
           </widget>
          </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>20</width>
+            <height>30</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </widget>
